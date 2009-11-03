@@ -8,15 +8,15 @@ Modelling and estimation of the yield curve
 \description{
 Modelling the yield curve with some parametric models. 
 The models implemented are: Nelson-Siegel, Diebold-Li and Svensson. 
-The package also includes the data of the term structure of interest rate of Federal Reserve 
+The package also includes the data of the term structure of interest rate of Federal Reserve Bank
 and European Central Bank.
 }
 \details{
 \tabular{ll}{
 Package: \tab YieldCurve\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2009-07-21\cr
+Version: \tab 2.0\cr
+Date: \tab 2009-11-03\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -42,9 +42,7 @@ Svensson, L.E. (1994), Estimating and Interpreting Forward Interest Rates: Swede
 \keyword{models}
 \keyword{htest}
 
-\seealso{
-\code{\link[<fBonds>:<fBonds>-package]{<fBonds>}} 
-}
+
 \examples{
 data(FedYieldCurve)
 tau <- c(3, 6, 12, 60, 84, 120)

@@ -28,12 +28,12 @@ Nelson, C.R., and A.F. Siegel (1987), Parsimonious Modeling of Yield Curve, \emp
 \author{Sergio Salvino Guirreri}
 
 \examples{
-data(FedYieldCurve)
-tau <- c(3,6,12,60,84,120)
-A <- Svensson(FedYieldCurve[1:10,], tau, c(3,12), c(60,120) )
-B <- Srates(A[,1:4], A[,5:6], tau, whichRate="Spot")
-plot(tau,FedYieldCurve[10,],main="Fitting Svensson's yield curve", type="o")
-lines(tau,B[10,], col=2)
+data(ECBYieldCurve)
+tauECB <- c(0.25,0.5,1:30)
+Y <- Svensson(ECBYieldCurve[1:10,], tauECB, c(1,4), c(5,8) )
+B <- Srates(Y[,1:4], Y[,5:6], tauECB, whichRate="Spot")
+plot(tauECB,ECBYieldCurve[10,],main="Fitting Svensson's yield curve", type="o")
+lines(tauECB,B[10,], col=2)
 legend("topleft",legend=c("observed yield curve","fitted yield curve"),col=c(1,2),lty=1)
 grid()
 }
