@@ -1,7 +1,7 @@
 Package: YieldCurve
 Type: Package
 Title: Modelling and estimation of the yield curve
-Version: 3.0
+Version: 3.1
 Date: 2010-07-19
 Author: Sergio Salvino Guirreri
 Maintainer: Sergio Salvino Guirreri <sergioguirreri@gmail.com>
@@ -15,6 +15,6 @@ LazyLoad: yes
 URL: http://www.guirreri.host22.com
 Repository: CRAN
 Repository/R-Forge/Project: yield-curve
-Repository/R-Forge/Revision: 15
-Date/Publication: 2010-07-24 19:42:51
-Packaged: 2010-07-19 20:42:17 UTC; rforge
+Repository/R-Forge/Revision: 34
+Date/Publication: 2012-10-29 08:58:09
+Packaged: 2012-10-29 08:58:09 UTC; ripley

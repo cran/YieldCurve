@@ -1,0 +1,16 @@
+c91fc88558b4633ecb35629c31ae39bc *DESCRIPTION
+9fdfeb11f7ddba6f3aab9aaa6b1ac5dd *NAMESPACE
+12deb7191f6d18aff99d25956aad5941 *R/NSrates.R
+65854bbba77b094a32a2c4e97097bc40 *R/Nelson.Siegel.R
+a43eb6cab3bce06f98e60ac0ea5ae510 *R/Srates.R
+c4624ba398eea59e92c897eabe057b56 *R/Svensson.R
+457dce92537657367b143f2883a3387c *data/ECBYieldCurve.rda
+cfd611f813775c8dc3916c0f0cc56371 *data/FedYieldCurve.rda
+ebbe099b7d8bbd52a04f85da10332bb2 *inst/CITATION
+18ec80798da1a86765e4cd5833dcb7d8 *man/ECBYieldCurve.Rd
+af34ff84c886b78d4d0e1aefda92e7a3 *man/FedYieldCurve.Rd
+6ec250dc8c0346ae45162a7093e1d21f *man/NSrates.Rd
+f7b48d6ed55074024d6be1a96a408eaa *man/Nelson.Siegel.Rd
+93c4e020dd6ef52c8d84dc034669e941 *man/Srates.Rd
+e52caf3c1b18fd23a8f067283a0f792c *man/Svensson.Rd
+c30420413f6a2137d103266c59fff57d *man/YieldCurve-package.Rd
