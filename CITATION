@@ -1,0 +1,16 @@
+citHeader("To cite the YieldCurve package in publications use:")
+
+citFooter("For BibTex versions of citations use: toBibtex(citation('YieldCurve'))")
+
+citEntry(entry="phdthesis",
+         author = personList(as.person("S.S. Guirreri")),
+	 title = "Simulating the Term Structure of Interest Rates with arbitrary marginals",
+         school = "University of Palermo - Department of Statistics and Mathematics ''S. Vianelli''",
+	 year         = 2010,
+	 address      = "Palermo",
+         url          = "http://www.guirreri.host22.com",
+         textVersion = 
+         paste("Guirreri, S.S. (2010).", 
+               "Simulating the Term Structure of Interest Rates with arbitrary marginals.",
+               "University of Palermo - Department of Statistics and Mathematics ''S. Vianelli''.")
+)
