@@ -5,16 +5,15 @@
 Returns the interest rates by Nelson-Siegel's model.
 }
 \usage{
-NSrates(betaCoeff, lambdat, maturity)
+NSrates(Coeff, maturity)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{betaCoeff}{ vector or matrix of the beta's coefficients.}
-  \item{lambdat}{ value of the estimated lambda}
+  \item{Coeff}{ Vector or matrix of the beta's coefficients and lambda as the function \code{Nelson.Siegel} returns. }
   \item{maturity}{ maturity of the yield curve of which want to return the interest rates.}
 }
 \details{
-\code{betaCoeff} is a vector or matrix of the three coefficients of the Nelson-Siegel's model
+\code{Coeff} is a vector or matrix of the four coefficients of the Nelson-Siegel's model: \eqn{(\beta_0; \beta_1; \beta_2; \lambda)}.
 }
 \value{
 Return interest rates in matrix object with number of rows equal to \code{nrow(betaCoeff)} and number of columns equal to \code{length(maturity)}.
@@ -30,14 +29,12 @@ Nelson, C.R., and A.F. Siegel (1987), Parsimonious Modeling of Yield Curve, \emp
 
 \examples{ 
 data(FedYieldCurve)
-b <- c(11.17514, -3.979371, 0.1302654)
-lambda <- c(0.1494588)
-tau <- c(3, 6, 12, 60, 84, 120 )
-y <- NSrates( b, lambda, tau)
-plot(tau,FedYieldCurve[10,],main="Fitting Nelson-Siegel yield curve", type="o")
-lines(tau,y, col=2)
+maturity.Fed <- c(3, 6, 12, 60, 84, 120)
+NSParameters <- Nelson.Siegel( rate=FedYieldCurve[1:10,], maturity=maturity.Fed )
+y <- NSrates(NSParameters[5,],maturity.Fed)
+plot(maturity.Fed,FedYieldCurve[10,],main="Fitting Nelson-Siegel yield curve", type="o")
+lines(maturity.Fed,y, col=2)
 legend("topleft",legend=c("observed yield curve","fitted yield curve"),
 col=c(1,2),lty=1)
 grid()
 }
-\keyword{ htest }

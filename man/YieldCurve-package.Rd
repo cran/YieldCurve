@@ -15,8 +15,8 @@ and European Central Bank.
 \tabular{ll}{
 Package: \tab YieldCurve\cr
 Type: \tab Package\cr
-Version: \tab 2.0\cr
-Date: \tab 2009-11-03\cr
+Version: \tab 4.0\cr
+Date: \tab 2012-11-03\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -25,7 +25,7 @@ DieboldLi
 \author{
 Sergio Salvino Guirreri
 
-Maintainer: Sergio Salvino Guirreri <sergioguirreri@gmail.com> <guirreri@dssm.unipa.it>
+Maintainer: Sergio Salvino Guirreri <sergioguirreri@gmail.com>
 
 }
 \references{
@@ -44,15 +44,27 @@ Svensson, L.E. (1994), Estimating and Interpreting Forward Interest Rates: Swede
 
 
 \examples{
+### Nelson.Siegel function and Fed data-set ###
 data(FedYieldCurve)
-tau <- c(3, 6, 12, 60, 84, 120)
-mediumTerm <- c(12,60,84)
-NSParameters <- Nelson.Siegel( rate=FedYieldCurve[1:10,], 
-			maturity=tau, MidTau=mediumTerm )
-y <- NSrates(NSParameters[5,1:3],
-	NSParameters$lambda[5],tau)
-plot(tau,FedYieldCurve[5,],main="Fitting Nelson-Siegel yield curve", type="o")
-lines(tau,y, col=2)
+rate.Fed = FedYieldCurve[1:5,]
+maturity.Fed <- c(3, 6, 12, 60, 84, 120)
+NSParameters <- Nelson.Siegel( rate= rate.Fed, maturity=maturity.Fed )
+y <- NSrates(NSParameters[5,], maturity.Fed)
+plot(maturity.Fed,rate.Fed[5,],main="Fitting Nelson-Siegel yield curve", type="o")
+lines(maturity.Fed,y, col=2)
+legend("topleft",legend=c("observed yield curve","fitted yield curve"),
+col=c(1,2),lty=1)
+
+### Svensson function and ECB data-set ###
+data(ECBYieldCurve)
+rate.ECB = ECBYieldCurve[1:5,]
+maturity.ECB = c(0.25,0.5,seq(1,30,by=1))
+SvenssonParameters <- Svensson(rate.ECB, maturity.ECB)
+Svensson.rate <- Srates( SvenssonParameters ,maturity.ECB,"Spot")
+
+plot(maturity.ECB, rate.ECB[5,],main="Fitting Svensson yield curve", type="o")
+lines(maturity.ECB, Svensson.rate[5,], col=2)
 legend("topleft",legend=c("observed yield curve","fitted yield curve"),
 col=c(1,2),lty=1)
 }
+

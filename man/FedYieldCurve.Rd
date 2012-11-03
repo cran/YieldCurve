@@ -12,7 +12,7 @@
 
 \source{
 \acronym{FED}: \url{http://www.federalreserve.gov/}. \cr
-Data set is available for download in Excel format at \url{http://www.guirreri.host22.com/index.php?p=1_2_Documents}. 
+Data set is available for download in Excel format at \url{http://www.guirreri.host22.com/}.
 }
 
 \examples{

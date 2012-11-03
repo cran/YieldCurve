@@ -5,15 +5,13 @@
   Returns the estimated coefficients of the Svensson's model.
 }
 \usage{
-Svensson(rate, maturity, Tau1 = c(3, 12), Tau2 = c(60, 120))
+Svensson(rate, maturity )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{rate}{ vector or matrix which contains the interest rates.}
   \item{maturity}{ vector wich contains the maturity ( in months) of the \code{rate}. The vector's length must be the same 
 		of the number of columns of the \code{rate}.}
-  \item{Tau1}{ vector of short-term maturity }
-  \item{Tau2}{ vector of long-term maturity }
 }
 \details{
 The Svensson's model to describe the forward rate is:
@@ -42,9 +40,16 @@ Nelson, C.R., and A.F. Siegel (1987), Parsimonious Modeling of Yield Curve, \emp
 }
 \author{ Sergio Salvino Guirreri}
 \examples{
-data(FedYieldCurve)
-tau <- c(3,6,12,60,84,120)
-A <- Svensson(FedYieldCurve[1:10,], tau, c(3,12), c(60,120) )
+data(ECBYieldCurve)
+maturity.ECB <- c(0.25,0.5,seq(1,30,by=1))
+A <- Svensson(ECBYieldCurve[1:10,], maturity.ECB )
+Svensson.rate <- Srates( A, maturity.ECB, "Spot" )
+plot(maturity.ECB, Svensson.rate[5,],main="Fitting Svensson yield curve",
+ xlab=c("Pillars in years"), type="l", col=3)
+lines( maturity.ECB, ECBYieldCurve[5,],col=2)
+legend("topleft",legend=c("fitted yield curve","observed yield curve"),
+col=c(1,2),lty=1)
+grid()
 }
 \keyword{models}
 \keyword{htest}

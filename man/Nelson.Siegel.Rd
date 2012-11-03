@@ -7,14 +7,13 @@
 }
 
 \usage{
-Nelson.Siegel(rate, maturity, MidTau)
+Nelson.Siegel( rate, maturity )
 }
 
 \arguments{
   \item{rate}{vector or matrix which contains the interest rates.}
   \item{maturity}{vector wich contains the maturity ( in months) of the \code{rate}. The vector's length must be the same 
 		of the number of columns of the \code{rate}.} 
-  \item{MidTau}{vector which indicates medium term maturity to maximize the beta_2 factor. }
 }
 \details{
 The Nelson-Siegel's model to describe the yield curve is:
@@ -38,14 +37,12 @@ Nelson, C.R., and A.F. Siegel (1987), Parsimonious Modeling of Yield Curve, \emp
 \seealso{ NelsonSiegel, Svensson}
 \examples{
 data(FedYieldCurve)
-tau <- c(3, 6, 12, 60, 84, 120)
-mediumTerm <- c(12,60,84)
-NSParameters <- Nelson.Siegel( rate=FedYieldCurve[1:10,], 
-			maturity=tau, MidTau=mediumTerm )
-y <- NSrates(NSParameters[5,1:3],
-	NSParameters$lambda[5],tau)
-plot(tau,FedYieldCurve[5,],main="Fitting Nelson-Siegel yield curve", type="o")
-lines(tau,y, col=2)
+maturity.Fed <- c(3, 6, 12, 60, 84, 120)
+NSParameters <- Nelson.Siegel( rate=FedYieldCurve[1:10,],	maturity=maturity.Fed)
+y <- NSrates(NSParameters[5,], maturity.Fed)
+plot(maturity.Fed,FedYieldCurve[5,],main="Fitting Nelson-Siegel yield curve",
+  xlab=c("Pillars in months"), type="o")
+lines(maturity.Fed,y, col=2)
 legend("topleft",legend=c("observed yield curve","fitted yield curve"),
 col=c(1,2),lty=1)
 grid()
