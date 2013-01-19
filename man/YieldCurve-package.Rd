@@ -15,8 +15,8 @@ and European Central Bank.
 \tabular{ll}{
 Package: \tab YieldCurve\cr
 Type: \tab Package\cr
-Version: \tab 4.0\cr
-Date: \tab 2012-11-03\cr
+Version: \tab 4.1\cr
+Date: \tab 2013-01-19\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -46,8 +46,8 @@ Svensson, L.E. (1994), Estimating and Interpreting Forward Interest Rates: Swede
 \examples{
 ### Nelson.Siegel function and Fed data-set ###
 data(FedYieldCurve)
-rate.Fed = FedYieldCurve[1:5,]
-maturity.Fed <- c(3, 6, 12, 60, 84, 120)
+rate.Fed = first(FedYieldCurve,'5 month')
+maturity.Fed <- c(3/12, 0.5, 1,2,3,5,7,10)
 NSParameters <- Nelson.Siegel( rate= rate.Fed, maturity=maturity.Fed )
 y <- NSrates(NSParameters[5,], maturity.Fed)
 plot(maturity.Fed,rate.Fed[5,],main="Fitting Nelson-Siegel yield curve", type="o")

@@ -6,7 +6,7 @@ function( rate, maturity )
     if(ncol(rate)==1) rate<-matrix(as.vector(rate),1,nrow(rate))
     pillars.number <- length(maturity)
     Tau1Values <- seq(maturity[1], median(maturity), by=1)
-    Tau2Values <- seq(median(maturity), maturity[pillars.number], by=0.5)
+    Tau2Values <- seq(median(maturity), maturity[pillars.number], by=1.5)
     
     FinalResults <- matrix(0, nrow(rate), 6)
     FinalResultsTau2 <- matrix(0, length(Tau1Values), 7)   
@@ -23,7 +23,7 @@ function( rate, maturity )
             for( a in 1:length(Tau2Values))
               {
                 Tau2Temp <- optimize(.beta2Spot,interval=c(0.001,maturity[pillars.number]),maturity=Tau2Values[a],maximum=TRUE)$maximum
-                InterEstimation <- .NSS.estimator(rate[j,], maturity, Tau1Temp, Tau2Temp)
+                InterEstimation <- .NSS.estimator(as.numeric(rate[j,]), maturity, Tau1Temp, Tau2Temp)
                 BetaCoef <- InterEstimation$Par
                 SSR <- sum(InterEstimation$Res^2)
                 InterResultsTau2[a,] <- c(BetaCoef, Tau1Temp, Tau2Temp, SSR)

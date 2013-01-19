@@ -1,31 +1,31 @@
 `.beta1Spot` <- function(maturity, tau)
   {
-    (1 - exp(-maturity/tau))/(maturity/tau)
+   as.numeric( (1 - exp(-maturity/tau))/(maturity/tau))
   }
 
 `.beta2Spot` <- function(maturity, tau)
   {
-    ((1 - exp(-maturity/tau))/(maturity/tau) - exp(-maturity/tau))
+   as.numeric(  ((1 - exp(-maturity/tau))/(maturity/tau) - exp(-maturity/tau)) )
   }
 
 `.beta1Forward` <- function(maturity, tau)
   {
-    exp(-maturity/tau) 
+       as.numeric( exp(-maturity/tau) )
   }
 
 `.beta2Forward` <- function(maturity, tau)
   {
-    exp(-maturity/tau) * (maturity/tau)  
+       as.numeric( exp(-maturity/tau) * (maturity/tau) )
   }
 
 `.factorBeta1` <- function(lambda, maturity)
   {
-    (1-exp(-lambda*maturity)) / (lambda*maturity) 
+   as.numeric( (1-exp(-lambda*maturity)) / (lambda*maturity) )
   }
 
 `.factorBeta2` <- function(lambda, maturity)
   {
-    (1-exp(-lambda*maturity)) / (lambda*maturity) - exp(-lambda*maturity) 
+  as.numeric( (1-exp(-lambda*maturity)) / (lambda*maturity) - exp(-lambda*maturity) )
   }
 
 `.NS.estimator` <- function( rate, maturity, lambda )

@@ -48,7 +48,7 @@ plot(maturity.ECB, Svensson.rate[5,],main="Fitting Svensson yield curve",
  xlab=c("Pillars in years"), type="l", col=3)
 lines( maturity.ECB, ECBYieldCurve[5,],col=2)
 legend("topleft",legend=c("fitted yield curve","observed yield curve"),
-col=c(1,2),lty=1)
+col=c(3,2),lty=1)
 grid()
 }
 \keyword{models}

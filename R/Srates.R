@@ -1,10 +1,10 @@
 `Srates`<- function( Coeff, maturity, whichRate="Forward" )
   {
-    Coeff <- try.xts( Coeff, error=as.matrix )
     if(ncol(Coeff)==1) Coeff<-matrix(as.vector(Coeff),1,nrow(Coeff))
-    Curve <- matrix( 0, nrow(Coeff), length(maturity) )
+    Curve <- xts(matrix( 0, nrow(Coeff), length(maturity) ), order.by=time(Coeff))
     colnames(Curve) <- make.names(maturity)
-
+    Coeff <- as.matrix(Coeff)
+    
     switch(whichRate,
       Forward =
       {
