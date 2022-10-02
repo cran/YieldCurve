@@ -9,7 +9,6 @@ citEntry(
          school = "University of Palermo - Department of Statistics and Mathematics ''S. Vianelli''",
 	       year         = 2010,
 	       address      = "Palermo",
-         url          = "http://www.guirreri.host22.com",
          textVersion = 
          paste("Guirreri, S.S. (2010).", 
                "Simulating the Term Structure of Interest Rates with arbitrary marginals.",

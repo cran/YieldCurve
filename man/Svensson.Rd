@@ -10,8 +10,7 @@ Svensson(rate, maturity )
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{rate}{ vector or matrix which contains the interest rates.}
-  \item{maturity}{ vector wich contains the maturity ( in months) of the \code{rate}. The vector's length must be the same 
-		of the number of columns of the \code{rate}.}
+  \item{maturity}{ vector which contains the maturity (in months) of the \code{rate}. The vector's length must be the same of the number of columns of the \code{rate}.}
 }
 \details{
 The Svensson's model to describe the forward rate is:

@@ -3,3 +3,4 @@ exportPattern(".")
 
 # Import all packages listed as Imports or Depends
 import( xts )
+importFrom("stats", "coef", "lm", "median", "na.omit", "optimize","resid", "time")

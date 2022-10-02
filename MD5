@@ -1,5 +1,5 @@
-837d461e44ce388972cb1a03bf2c34f5 *DESCRIPTION
-596cd60cc2b7c213fd6cc6fde8db2bb4 *NAMESPACE
+d3967373f50c499e0926992d6ac63cd7 *DESCRIPTION
+af0d3df61d09863c9f4d05f2f07fad8c *NAMESPACE
 2deabcb2919f05a83b41957b7df2fbba *R/NSrates.R
 eccfa19aca8a18e7bc3e502a5ffbf07a *R/Nelson.Siegel.R
 b740f1198cf86884908d4a0a1cd098e1 *R/Srates.R
@@ -7,11 +7,13 @@ b740f1198cf86884908d4a0a1cd098e1 *R/Srates.R
 b19af5283be0003be098cc28c6ec47c6 *R/beta.R
 d21f184eb8386829cb16ad92f1b947d1 *data/ECBYieldCurve.rda
 eb8ee2466c49d104de4e1fe040c75e32 *data/FedYieldCurve.rda
-77c1eda294f2fce87ec13f025c1180c8 *inst/CITATION
-49e8abaa99d11cb16923a8b82ff3cde3 *man/ECBYieldCurve.Rd
-cd97dc6a250711efcb971728ac61cf93 *man/FedYieldCurve.Rd
+b2bacd89f08af40a55fae1dcaa1f7689 *inst/CITATION
+952c2c62bafd4ebfe3354f1acfdda9a5 *inst/NEWS.md
+004ff7cfd8f6e0565a2bb79f0c5e91df *inst/WORDLIST
+0f8cb7b03744549881e12ba7ff72acdb *man/ECBYieldCurve.Rd
+42957cce8e7ed34dcf598bd60a73572b *man/FedYieldCurve.Rd
 5b192c4a084c901a71bcea0cb3de0ab3 *man/NSrates.Rd
-96470d272bf60122fc87a7316955f0e5 *man/Nelson.Siegel.Rd
+0431540e42daacdc53a58c0c2d613f7f *man/Nelson.Siegel.Rd
 765d9e6c100570c527f976448d0debd7 *man/Srates.Rd
-82ab16e3d913d0c380a98a2842ea068e *man/Svensson.Rd
-62ccd9bcd2ca3b7877325a8a01759fc1 *man/YieldCurve-package.Rd
+83016b612503b9092d672203b5fc7a87 *man/Svensson.Rd
+09d71dfdfe3d9eb917b3ff2c4b96249c *man/YieldCurve-package.Rd

@@ -8,11 +8,11 @@ The range date is from 2006-12-29 to 2009-07-24.
 }
 \usage{data(ECBYieldCurve)}
 \format{
-It is an \code{xts} object with 32 interest rate at different matuirties and 655 obeservations.
+It is an \code{xts} object with 32 interest rate at different maturities and 655 observations.
 }
 
 \source{
-\acronym{ECB}: \url{http://www.ecb.europa.eu/stats/money/yc/html/index.en.html}.\cr
+\acronym{ECB}: \url{https://www.ecb.europa.eu/stats/financial_markets_and_interest_rates/euro_area_yield_curves/html/index.en.html}.\cr
 }
 
 \examples{
@@ -26,7 +26,7 @@ mat.ECB <- tau <- c(3/12,6/12,1:30)
 
 par(mfrow=c(2,3))
 for( i in c(1,2,3,653,654,655) ){
-plot(mat.ECB, ECBYieldCurve[i,], type="o", xlab="Maturities structure in years", ylab="Interest rates values")
+plot(mat.ECB, ECBYieldCurve[i,], type="o", xlab="Maturity in years", ylab="IR values")
 title(main=paste("European Central Bank yield curve obeserved at",time(ECBYieldCurve[i], sep=" ") ))
 grid()
 }

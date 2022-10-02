@@ -12,7 +12,7 @@ Nelson.Siegel( rate, maturity )
 
 \arguments{
   \item{rate}{vector or matrix which contains the interest rates.}
-  \item{maturity}{vector wich contains the maturity ( in months) of the \code{rate}. The vector's length must be the same 
+  \item{maturity}{vector which contains the maturity ( in months) of the \code{rate}. The vector's length must be the same 
 		of the number of columns of the \code{rate}.} 
 }
 \details{
